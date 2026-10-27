@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #182b35 0%,
+            #0b1116 35%,
+            #05080b 75%
+        );
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* Калькулятор */
+
+.calculator {
+    position: relative;
+
+    width: 350px;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 48, 57, 0.95),
+            rgba(8, 13, 17, 0.98)
+        );
+
+    border: 1px solid rgba(0, 238, 255, 0.2);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+
+/* Верхняя декоративная линия */
+
+.calculator::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00eaff,
+        transparent
+    );
+
+    box-shadow: 0 0 12px #00eaff;
+}
+
+
+/* Экран */
+
+#display {
+    width: 100%;
+    height: 85px;
+
+    margin-bottom: 20px;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(0, 238, 255, 0.25);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(2, 15, 19, 0.95),
+            rgba(4, 10, 13, 0.98)
+        );
+
+    color: #dfffff;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    text-align: right;
+
+    text-shadow:
+        0 0 5px #00eaff,
+        0 0 15px rgba(0, 234, 255, 0.7),
+        0 0 30px rgba(0, 234, 255, 0.3);
+
+    box-shadow:
+        inset 0 5px 15px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(0, 234, 255, 0.08);
+}
+
+
+/* Сетка кнопок */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 11px;
+}
+
+
+/* Все кнопки */
+
+button {
+    position: relative;
+
+    height: 62px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #26343c,
+            #11191e
+        );
+
+    color: #e9faff;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #080c0f,
+        0 8px 15px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.08s,
+        box-shadow 0.08s,
+        color 0.15s,
+        border-color 0.15s;
+}
+
+
+/* Наведение */
+
+button:hover {
+    color: #ffffff;
+
+    border-color: rgba(0, 238, 255, 0.45);
+
+    box-shadow:
+        0 5px 0 #080c0f,
+        0 0 15px rgba(0, 234, 255, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+    text-shadow:
+        0 0 8px rgba(0, 234, 255, 0.8);
+}
+
+
+/* Нажатие */
+
+button:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #080c0f,
+        inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Обычные цифры */
+
+.number {
+    color: #e9faff;
+}
+
+
+/* Операторы */
+
+.operator {
+    color: #00eaff;
+
+    border-color: rgba(0, 234, 255, 0.2);
+}
+
+.operator:hover {
+    border-color: rgba(0, 234, 255, 0.6);
+
+    box-shadow:
+        0 5px 0 #080c0f,
+        0 0 20px rgba(0, 234, 255, 0.3);
+}
+
+
+/* Кнопка очистки */
+
+.clear {
+    color: #ff5c7a;
+
+    border-color: rgba(255, 92, 122, 0.2);
+}
+
+.clear:hover {
+    color: #ff7891;
+
+    border-color: rgba(255, 92, 122, 0.6);
+
+    box-shadow:
+        0 5px 0 #080c0f,
+        0 0 18px rgba(255, 92, 122, 0.25);
+}
+
+
+/* Кнопка равно */
+
+.equals {
+    color: #071013;
+
+    background:
+        linear-gradient(
+            145deg,
+            #4fffff,
+            #00a9c7
+        );
+
+    border-color: #62faff;
+
+    text-shadow: none;
+
+    box-shadow:
+        0 5px 0 #006477,
+        0 0 20px rgba(0, 234, 255, 0.25),
+        inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.equals:hover {
+    color: #071013;
+
+    background:
+        linear-gradient(
+            145deg,
+            #72ffff,
+            #00c5e5
+        );
+
+    box-shadow:
+        0 5px 0 #006477,
+        0 0 30px rgba(0, 234, 255, 0.5);
+}
